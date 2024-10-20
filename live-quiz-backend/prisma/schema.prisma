@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum AllowedSubmissions {
+  ZERO
+  ONE
+  TWO
+  THREE
+}
+
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  phoneNumber String 
+  password    String
+  
+  name        String?
+  points      Int?      @default(0)
+  submissions Submission[]
+}
+
+model googleUser {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  
+  name        String?
+  points      Int?      @default(0)
+  submissions Submission[]
+}
+
+model Quiz {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  roomId   String
+  problems  Problem[]
+}
+
+model Problem {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  image       String?
+  answer      AllowedSubmissions
+  options     Option[]
+  submissions Submission[]
+  quizId      String      @db.ObjectId
+  quiz        Quiz        @relation(fields: [quizId], references: [id])
+}
+
+model Option {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  optionId Int
+  title    String
+  problem  Problem @relation(fields: [problemId], references: [id])
+  problemId String @db.ObjectId
+}
+
+model Submission {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  problemId     String   @db.ObjectId
+  userId        String   @db.ObjectId
+  isCorrect     Boolean
+  optionSelected AllowedSubmissions
+  problem       Problem  @relation(fields: [problemId], references: [id])
+  user          User?    @relation(fields: [userId], references: [id])
+  googleUser    googleUser? @relation(fields: [userId], references: [id])
+}

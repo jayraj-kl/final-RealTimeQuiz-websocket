@@ -1,0 +1,20 @@
+{
+  "name": "live-quiz-app",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.2",
+    "@prisma/client": "^5.19.1",
+    "@prisma/extension-accelerate": "^1.1.0",
+    "hono": "^4.5.11",
+    "socket.io": "^4.7.5",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "prisma": "^5.19.1",
+    "wrangler": "^3.57.2"
+  }
+}

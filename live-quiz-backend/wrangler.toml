@@ -1,0 +1,22 @@
+name = "live-quiz-app"
+compatibility_date = "2024-09-04"
+# compatibility_flags = [ "nodejs_compat" ]
+node_compat = true
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiM2MzZDUyZjUtODAxOS00MjIxLWFjNzYtODM5YmJkOGRiNGUxIiwidGVuYW50X2lkIjoiOTljOGY5ODBhZmUyNmVjN2U4MGM1ZWU4MDU4NjVlMDg2ZmIwZjAzOTY4NGFiZWI5MDIzNzNkYWNhNWQ2ZDBiNyIsImludGVybmFsX3NlY3JldCI6IjI5OWIwNjk0LTczOGEtNDk4Ny04Mzg1LTY4YzU1OWYxZWUyYSJ9.G5WPVc4v_HFBZPMP2nmgyG-rKeFP9XrX2qtfmF0LROc"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
+
+# [ai]
+# binding = "AI"
