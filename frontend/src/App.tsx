@@ -8,13 +8,9 @@ import GlobeDemo from "@/components/GlobeDemo"
 import { CoverDemo } from "./components/CoverDemo";
 import AuthForms from "./components/auth-form";
 import { Github, Twitter } from 'lucide-react'
-
-import { Eye, EyeOff } from 'lucide-react'
 import { TextRevealCardPreview } from "./components/TextRevealCardPreview";
 import { TracingBeamDemo } from "./components/TracingBeamDemo";
-import { FloatingDockDemo } from "./components/FloatingDockDemo";
-import { AnimatedTestimonialsDemo } from "./components/AnimatedTestimonialsDemo";
-import Component from "./components/thank-you-message";
+
 
 export default function App() {
   return (
@@ -31,12 +27,12 @@ export default function App() {
                 <div>
                   <GlobeDemo />
                 </div>
-                {/* <div>
+                <div>
                   <TextRevealCardPreview />
-                </div> */}
-
-                {/* <TracingBeamDemo /> */}
-                {/* <FloatingDockDemo /> */}
+                </div>
+                <div>
+                  <TracingBeamDemo />
+                </div>
 
               </div>
             } />

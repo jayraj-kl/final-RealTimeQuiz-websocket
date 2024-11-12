@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+// @ts-ignore 
+import { useForm } from "react-hook-form"
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import axios from 'axios'
@@ -52,7 +53,7 @@ export default function AuthPage() {
   const onSignup = async (data: SignupInputs) => {
     setIsLoading(true)
     try {
-      const response = await axios.post('http://127.0.0.1:8787/api/v1/user/signup', data)
+      await axios.post('https://live-quiz-app.jayrajkladkat.workers.dev/api/v1/user/signup', data)
       toast({ title: "Success", description: "Account created successfully" })
       signupForm.reset()
       navigate('/user') // Redirect to home page after successful signup
@@ -70,7 +71,7 @@ export default function AuthPage() {
   const onSignin = async (data: SigninInputs) => {
     setIsLoading(true)
     try {
-      const response = await axios.post('http://127.0.0.1:8787/api/v1/user/signin', data)
+      const response = await axios.post('https://live-quiz-app.jayrajkladkat.workers.dev/api/v1/user/signin', data)
       toast({ title: "Success", description: "Signed in successfully" })
       console.log('Token:', response.data.token)
       navigate('/user') // Redirect to home page after successful signin
@@ -103,7 +104,7 @@ export default function AuthPage() {
                     <FormField
                       control={signupForm.control}
                       name="email"
-                      render={({ field }) => (
+                      render={({ field }: { field: any }) => (
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
@@ -116,7 +117,7 @@ export default function AuthPage() {
                     <FormField
                       control={signupForm.control}
                       name="phoneNumber"
-                      render={({ field }) => (
+                      render={({ field }: { field: ReturnType<typeof signinForm['control']['register']> }) => (
                         <FormItem>
                           <FormLabel>Phone Number</FormLabel>
                           <FormControl>
@@ -129,7 +130,7 @@ export default function AuthPage() {
                     <FormField
                       control={signupForm.control}
                       name="password"
-                      render={({ field }) => (
+                      render={({ field }: { field: ReturnType<typeof signupForm['control']['register']> }) => (
                         <FormItem>
                           <FormLabel>Password</FormLabel>
                           <FormControl>
@@ -161,7 +162,7 @@ export default function AuthPage() {
                     <FormField
                       control={signupForm.control}
                       name="confirmPassword"
-                      render={({ field }) => (
+                      render={({ field }: { field: ReturnType<typeof signupForm['control']['register']> }) => (
                         <FormItem>
                           <FormLabel>Confirm Password</FormLabel>
                           <FormControl>
@@ -202,7 +203,7 @@ export default function AuthPage() {
                     <FormField
                       control={signinForm.control}
                       name="email"
-                      render={({ field }) => (
+                      render={({ field }: { field: ReturnType<typeof signinForm['control']['register']> }) => (
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
@@ -215,7 +216,7 @@ export default function AuthPage() {
                     <FormField
                       control={signinForm.control}
                       name="password"
-                      render={({ field }) => (
+                      render={({ field }: { field: ReturnType<typeof signinForm['control']['register']> }) => (
                         <FormItem>
                           <FormLabel>Password</FormLabel>
                           <FormControl>

@@ -37,78 +37,58 @@ export function TracingBeamDemo() {
 
 const dummyContent = [
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Planning and Setup Phase",
     description: (
       <>
         <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
+          Defined the core objectives for the Live Quiz Application, focusing on real-time interaction using Socket.IO, efficient database management with MongoDB, and a user-friendly UI to enhance the quiz experience.
         </p>
         <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
+          <strong>Tech Stack Selection:</strong> Carefully chose the MERN stack (MongoDB, Express.js, React, Node.js) along with Socket.IO for real-time capabilities.
         </p>
         <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
+          <strong>Initial Setup:</strong> Established the MERN stack environment and designed the project's foundational structure, integrating both backend and frontend with necessary Socket.IO configurations.
         </p>
       </>
     ),
-    badge: "React",
+    badge: "",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1706559780094-648dbe2b2bd0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Development and Integration",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+          Backend development with Node.js and Express focused on building robust APIs for managing quiz data, users, and scores. Integrated MongoDB to handle data efficiently.
         </p>
         <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
+          Real-time functionality using Socket.IO allowed seamless communication, enabling features like live quiz sessions, instant score updates, and user interaction.
+        </p>
+        <p>
+          The React-based frontend offered an intuitive quiz interface with features such as live scoreboards, timers, and dynamic question displays.
         </p>
       </>
     ),
-    badge: "Changelog",
+    badge: "",
     image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=3021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Testing and Launch",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+          Extensive testing ensured smooth real-time operations, focusing on reducing latency and handling edge cases. Optimized both backend and frontend for a seamless user experience.
+        </p>
+        <p>
+          Deployed the application using modern cloud services, guaranteeing scalability and reliability. Monitored live performance post-launch to refine the experience based on real user feedback.
         </p>
       </>
     ),
-    badge: "Launch Week",
+    badge: "",
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.slido.com/static/slido-live-quizzes-hero.a15bccb1.1600.jpg",
   },
 ];
+

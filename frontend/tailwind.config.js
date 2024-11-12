@@ -14,7 +14,7 @@ export default {
   theme: {
   	extend: {
 		animation: {
-			'infinite-scroll': 'infinite-scroll 25s linear infinite',
+			'infinite-scroll': 'infinite-scroll 40s linear infinite',
 			"caret-blink": "caret-blink 1.25s ease-out infinite",
 		},
 		keyframes: {
