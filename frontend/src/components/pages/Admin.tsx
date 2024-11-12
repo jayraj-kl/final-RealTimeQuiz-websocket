@@ -20,7 +20,7 @@ export const Admin = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000/");
+    const newSocket = io("http://ec2-13-201-184-9.ap-south-1.compute.amazonaws.com:3000/");
     setSocket(newSocket);
 
     newSocket.on("connect", () => {

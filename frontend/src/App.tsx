@@ -6,7 +6,6 @@ import { Admin } from "./components/pages/Admin";
 import { Toaster } from "@/components/ui/toaster"
 import GlobeDemo from "@/components/GlobeDemo"
 import { CoverDemo } from "./components/CoverDemo";
-import AuthForms from "./components/auth-form";
 import { Github, Twitter } from 'lucide-react'
 import { TextRevealCardPreview } from "./components/TextRevealCardPreview";
 import { TracingBeamDemo } from "./components/TracingBeamDemo";
@@ -38,7 +37,6 @@ export default function App() {
             } />
             <Route path="admin" element={<Admin />} />
             <Route path="user" element={<User />} />
-            <Route path="auth" element={ <AuthForms /> } />
           </Routes>
           <footer className="fixed bottom-0 left-0 w-full bg-background border-t border-border py-6 px-4 md:px-6">
   <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">

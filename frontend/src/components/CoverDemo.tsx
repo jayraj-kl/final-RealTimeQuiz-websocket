@@ -14,7 +14,7 @@ export function CoverDemo() {
         Test your knowledge and compete with others in real-time. Are you ready to take on the challenge?
       </p>
       <div className="mt-12 flex flex-col sm:flex-row gap-6">
-        <Button size="lg" className="text-lg px-8 py-6" onClick={()=> { navigate('/auth') }}>Join Quiz</Button>
+        <Button size="lg" className="text-lg px-8 py-6" onClick={()=> { navigate('/user') }}>Join Quiz</Button>
         <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={()=> { navigate('/admin') }}>Admin Panel</Button>
       </div>
     </div>

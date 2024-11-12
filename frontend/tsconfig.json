@@ -6,6 +6,11 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "target": "ES6",
     "paths": {
       "@/*": ["./src/*"]
     }
