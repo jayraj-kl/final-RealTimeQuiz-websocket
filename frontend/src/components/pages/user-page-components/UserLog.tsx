@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import NotStarted from "./NotStarted";
 import { Quiz } from "../Quiz";
+import { useToast } from "@/hooks/use-toast";
+// import { Toaster } from "@/components/ui/toaster"
 import { LeaderBoard } from "../Leaderboard";
 import Component from "@/components/thank-you-message";
 
@@ -14,9 +16,18 @@ const UserLoggedin = ({ name, code }: { name: any; code: any; }) => {
     const [userId, setUserId] = useState("");
     const [totalQuestions, setTotalQuestions] = useState(0)
     const [currentProblemIndex, setCurrentProblemIndex] = useState(0)
+    const { toast } = useToast();
 
     useEffect(() => {
         const socket = io(import.meta.env.VITE_BACKEND_URL);
+        socket.on("connect_error", (err) => {
+            console.error("Connection error:", err);
+            toast({
+                title: "Connection Error",
+                description: "Unable to connect to the server. Please try again later.",
+                variant: "destructive",
+            });
+        })
         console.log(socket);
         setSocket(socket)
 

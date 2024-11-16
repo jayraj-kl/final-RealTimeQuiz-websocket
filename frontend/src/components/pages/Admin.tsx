@@ -21,6 +21,14 @@ export const Admin = () => {
 
   useEffect(() => {
     const newSocket = io(import.meta.env.VITE_BACKEND_URL);
+    newSocket.on("connect_error", (err) => {
+      console.error("Connection error:", err);
+      toast({
+      title: "Connection Error",
+      description: "Unable to connect to the server. Please try again later.",
+      variant: "destructive",
+      });
+    });
     console.log(newSocket);
     setSocket(newSocket);
 
