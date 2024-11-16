@@ -5,7 +5,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sparkles } from 'lucide-react'
-import { AnimatedTestimonialsDemo } from '@/components/AnimatedTestimonialsDemo'
 import { useNavigate } from 'react-router-dom'
 
 export default function ThankYouMessage() {
@@ -49,7 +48,7 @@ export default function ThankYouMessage() {
           </CardFooter>
         </Card>
       </motion.div>
-      <AnimatedTestimonialsDemo />
+      {/* <AnimatedTestimonialsDemo /> */}
     </div>
   )
 }
