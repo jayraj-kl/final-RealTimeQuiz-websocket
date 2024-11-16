@@ -55,12 +55,21 @@ export class UserManager {
             });
 
             socket.on("next", (data) => {
-                this.quizManager.next(data.roomId);
-                console.log("Next problem for quiz:", data);
+                const quiz = this.quizManager.getQuiz(data.roomId);
+                if (quiz && quiz.getCurrentState()?.type === "ended") {
+                    this.quizManager.removeQuiz(data.roomId);
+                    socket.to(data.roomId).emit("ROOM_TERMINATED", { message: "This room has been terminated" });
+                    socket.leave(data.roomId);
+                } else {
+                    this.quizManager.next(data.roomId);
+                }
+                console.log("Next problem or quiz terminated:", data);
             });
 
             socket.on("endQuiz", (data) => {
                 this.quizManager.end(data.roomId);
+                socket.to(data.roomId).emit("ROOM_TERMINATED", { message: "This room has been terminated" });
+                socket.leave(data.roomId);
                 console.log("Quiz ended:", data);
             });
 

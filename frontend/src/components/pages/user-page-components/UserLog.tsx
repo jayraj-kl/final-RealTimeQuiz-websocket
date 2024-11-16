@@ -16,7 +16,8 @@ const UserLoggedin = ({ name, code }: { name: any; code: any; }) => {
     const [currentProblemIndex, setCurrentProblemIndex] = useState(0)
 
     useEffect(() => {
-        const socket = io("https://backend.jayrajkl.com/");
+        const socket = io(import.meta.env.VITE_BACKEND_URL);
+        console.log(socket);
         setSocket(socket)
 
         socket.on("connect", () => {

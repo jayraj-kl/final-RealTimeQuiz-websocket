@@ -29,6 +29,14 @@ export class QuizManager {
         });
     }
 
+    public removeQuiz(roomId: string) {
+        const index = this.quizes.findIndex(x => x.roomId === roomId);
+        if (index !== -1) {
+            this.quizes.splice(index, 1);
+            console.log(`Quiz room ${roomId} has been terminated`);
+        }
+    }
+
     public createDemoQuiz(roomId: string) {
         this.addQuiz(roomId);
         this.addProblem(roomId, {
@@ -71,7 +79,12 @@ export class QuizManager {
     }
 
     public end(roomId: string) {
-        this.getQuiz(roomId)?.end();
+        const quiz = this.getQuiz(roomId);
+        if (quiz) {
+            quiz.end();
+            this.removeQuiz(roomId);
+        }
+        
     }
 
     public leaderboard(roomId: string) {

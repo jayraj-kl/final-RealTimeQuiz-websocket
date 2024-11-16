@@ -127,6 +127,7 @@ export class Quiz {
             } catch (error) {
                 console.error("Error writing CSV file:", error);
             }
+            IoManager.getIo().emit("ROOM_TERMINATED", { roomId: this.roomId });
     }
 
     genRandonString(length: number) {

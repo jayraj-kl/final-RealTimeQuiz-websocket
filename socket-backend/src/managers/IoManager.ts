@@ -11,7 +11,7 @@ export class IoManager {
         if (!this.io) {
             const io = new Server(server, {
                 cors: {
-                    origin: ["http://localhost:5173", "http://192.168.172.237:5173/", "http://192.168.172.237:5173/user", "http://192.168.172.237:5173/admin"],
+                    origin: "*",
                     methods: ["GET", "POST", 'PUT']
                 }
             });

@@ -20,7 +20,8 @@ export const Admin = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const newSocket = io("https://backend.jayrajkl.com/");
+    const newSocket = io(import.meta.env.VITE_BACKEND_URL);
+    console.log(newSocket);
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
